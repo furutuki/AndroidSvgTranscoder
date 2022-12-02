@@ -1,0 +1,8 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+dependencies {
+    implementation 'org.apache.xmlgraphics:batik-bridge:1.16'
+    implementation 'org.apache.xmlgraphics:batik-gvt:1.16'
+}
