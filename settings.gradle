@@ -1,12 +1,15 @@
 pluginManagement {
     repositories {
+        maven {
+            url = './local-plugin-repository'
+        }
         gradlePluginPortal()
         google()
         mavenCentral()
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -15,3 +18,4 @@ dependencyResolutionManagement {
 rootProject.name = "AndroidSvgTranscoder"
 include ':transcoder-core'
 include ':transcoder-sample'
+include ':transcoder-plugin'
