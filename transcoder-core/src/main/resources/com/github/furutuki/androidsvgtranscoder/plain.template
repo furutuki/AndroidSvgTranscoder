@@ -68,7 +68,7 @@ ${PAINTING_CODE}
     /**
      * Clear the color tint for the svg, it will be drawn with the original color in the svg file.
      **/
-    public void clearColorTint(int color){
+    public void clearColorTint(){
         colorFilter = null;
     }
 
