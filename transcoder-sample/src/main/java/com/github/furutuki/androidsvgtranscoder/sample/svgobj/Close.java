@@ -16,7 +16,7 @@ import java.util.LinkedList;
  *
  * @author furutuki furutuki@foxmail.com
  */
-public class Rectangle {
+public class Close {
 
     private final Paint  paint       = new Paint();
     private final Paint  strokePaint = new Paint();
@@ -35,8 +35,8 @@ public class Rectangle {
      * @param dy the y-offset of svg's left top in the canvas
      */
     public void paint(Canvas canvas, int w, int h, int dx, int dy) {
-        float svgWidth = 302f;
-        float svgHeight= 102f;
+        float svgWidth = 1f;
+        float svgHeight= 1f;
 
         resetPaint();
 
@@ -54,25 +54,57 @@ public class Rectangle {
 
 
         // 
+        transform = new Matrix();
+		transform.setValues(new float[]{0.0070459f, 0, 0, 0, 0.0070459f, 0, 0, 0, 1});
+
+        matrixList.push(transform);
 
         // _0
 
         // _0_0
         path.reset();
-        path.addRect(0.0f, 0.0f, 300.0f, 100.0f, Path.Direction.CW);
+        path.moveTo(4.2577953f, 3.1642516f);
+        path.lineTo(4.2577953f, 3.1642516f);
+        path.lineTo(4.2577953f, 3.1642516f);
+        path.lineTo(4.2577953f, 3.1642516f);
+        path.quadTo(5.6770606f, 1.7449864f, 8.515591f, 1.7449864f);
+        path.quadTo(11.354121f, 1.7449864f, 12.773386f, 3.1642516f);
+        path.lineTo(12.773386f, 3.1642516f);
+        path.lineTo(70.96326f, 61.354122f);
+        path.lineTo(129.15312f, 3.1642516f);
+        path.quadTo(130.57239f, 1.7449864f, 133.41092f, 1.7449864f);
+        path.quadTo(136.24945f, 1.7449864f, 138.37834f, 3.8738842f);
+        path.quadTo(140.50725f, 6.002782f, 140.50725f, 8.13168f);
+        path.quadTo(140.50725f, 10.260577f, 137.66872f, 13.099108f);
+        path.lineTo(137.66872f, 13.099108f);
+        path.lineTo(79.47884f, 71.28898f);
+        path.lineTo(137.66872f, 129.47885f);
+        path.quadTo(140.50725f, 130.89812f, 140.50725f, 133.02701f);
+        path.quadTo(140.50725f, 135.15591f, 139.08798f, 137.99443f);
+        path.lineTo(139.08798f, 137.99443f);
+        path.lineTo(137.66872f, 137.99443f);
+        path.quadTo(136.24945f, 139.4137f, 133.41092f, 139.4137f);
+        path.quadTo(130.57239f, 139.4137f, 129.15312f, 137.99443f);
+        path.lineTo(129.15312f, 137.99443f);
+        path.lineTo(70.96326f, 79.804565f);
+        path.lineTo(12.773386f, 137.99443f);
+        path.quadTo(11.354121f, 139.4137f, 8.515591f, 139.4137f);
+        path.quadTo(5.6770606f, 139.4137f, 3.5481627f, 137.99443f);
+        path.quadTo(1.4192652f, 136.57516f, 1.4192652f, 133.73665f);
+        path.quadTo(1.4192652f, 130.89812f, 4.2577953f, 129.47885f);
+        path.lineTo(4.2577953f, 129.47885f);
+        path.lineTo(62.447666f, 71.28898f);
+        path.lineTo(4.2577953f, 13.099108f);
+        path.quadTo(2.8385303f, 11.679842f, 2.1288977f, 8.841312f);
+        path.quadTo(1.4192652f, 6.002782f, 4.2577953f, 3.1642516f);
+        path.close();
         applyTransform(matrixList);
         path.transform(matrix);
-        paint.setColor(Color.argb(255, 0, 0, 255));
+        paint.setColor(Color.argb(255, 0, 0, 0));
         canvas.drawPath(path, paint);
 
-        strokePaint.setColor(Color.argb(255, 0, 0, 0));
-        strokePaint.setStrokeWidth(3.0f);
-        strokePaint.setStrokeCap(Paint.Cap.BUTT);
-        strokePaint.setStrokeJoin(Paint.Join.MITER);
-        strokePaint.setStrokeMiter(4.0f);
-        strokePaint.setPathEffect(null);
-        canvas.drawPath(path, strokePaint);
 
+        matrixList.pop();
 
         canvas.restore();
     }

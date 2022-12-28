@@ -1,8 +1,28 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm'
+    id 'maven-publish'
 }
 
 dependencies {
-    implementation 'org.apache.xmlgraphics:batik-bridge:1.16'
-    implementation 'org.apache.xmlgraphics:batik-gvt:1.16'
+    api 'org.apache.xmlgraphics:batik-bridge:1.16'
+    api 'org.apache.xmlgraphics:batik-gvt:1.16'
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'io.github.furutuki'
+            artifactId = 'transcoder-core'
+            version = '0.1.0'
+
+            from components.java
+        }
+    }
+//    publish to local directory
+    repositories {
+        maven {
+            name = 'localRepo'
+            url = "../localRepo"
+        }
+    }
 }

@@ -17,24 +17,28 @@ import kotlin.system.exitProcess
  * transcoded classes.
  */
 fun main(args: Array<String>) {
-    if (args.size != 2) {
-        println("param 0 : dir, param 1 : pkg")
+    if (args.size != 3) {
+        println("param 0 : svg-file-dir,param 1: java-file-dir param 2: java-file-package-name")
         exitProcess(1)
     }
     val dir = File(args[0])
     if (!dir.exists()) {
         return
     }
+    val outputBaseDir = File(args[1])
+    if (!outputBaseDir.exists()) {
+        outputBaseDir.mkdirs()
+    }
     val namingStrategy: NamingStrategy = CamelCaseNamingStrategy()
     dir.listFiles { _, name -> name.endsWith(".svg") || name.endsWith(".svgz") }?.run {
         for (file in this) {
             val svgClassName: String = namingStrategy.getClassName(file)
-            val javaClassFilename: String = dir.toString() + File.separator.toString() + svgClassName + ".java"
+            val javaClassFilename: String = outputBaseDir.toString() + File.separator.toString() + svgClassName + ".java"
             println("Processing " + file.name)
             try {
                 val pw = PrintWriter(javaClassFilename)
                 val transcoder = SvgTranscoder(file.toURI().toURL(), svgClassName)
-                transcoder.javaPackageName = args[1]
+                transcoder.javaPackageName = args[2]
                 transcoder.externalPrintWriter = pw
                 transcoder.transcode()
             } catch (e: Exception) {

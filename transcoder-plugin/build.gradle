@@ -4,22 +4,22 @@ plugins {
 }
 
 dependencies {
-    implementation project(':transcoder-core')
+    implementation 'io.github.furutuki:transcoder-core:0.1.0'
 }
+//
+//pluginBundle {
+//    website = 'https://github.com/furutuki/AndroidSvgTranscoder'
+//    vcsUrl = 'https://github.com/furutuki/AndroidSvgTranscoder.git'
+//    tags = ['svg', 'transcode', 'android', 'java']
+//}
 
-pluginBundle {
-    website = 'https://github.com/furutuki/AndroidSvgTranscoder'
-    vcsUrl = 'https://github.com/furutuki/AndroidSvgTranscoder.git'
-    tags = ['svg', 'transcode', 'android', 'java']
-}
-
-group = 'io.github.furutuki.androidsvgtranscoder'
+group = 'io.github.furutuki'
 version = '0.1.0'
 
 gradlePlugin {
     plugins {
         svgTranscoderPlugin {
-            id = 'io.github.furutuki.androidsvgtranscoder'
+            id = 'io.github.furutuki.android-svg-transcoder'
             displayName = 'Gradle plugin for transcoding svg to android source file'
             description = 'A plugin that helps you transcode svg files to android source file,' +
                     ' with which you can compile and use the generated classes to render svg image ' +
@@ -29,12 +29,12 @@ gradlePlugin {
     }
 }
 //
-//// 发布插件到本地目录
-//publishing {
-//    repositories {
-//        maven {
-//            name = 'localPluginRepository'
-//            url = '../local-plugin-repository'
-//        }
-//    }
-//}
+//// publish to local directory
+publishing {
+    repositories {
+        maven {
+            name = 'localRepo'
+            url = '../localRepo'
+        }
+    }
+}

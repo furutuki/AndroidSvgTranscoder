@@ -4,5 +4,7 @@ class SvgConverterExtension {
 
     String svgFolder
 
+    String javaFolder
+
     String packageName
 }

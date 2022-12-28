@@ -26,6 +26,7 @@ class SvgCanvasView @JvmOverloads constructor(
     private val polygon = Polygon()
     private val textCanvas = Text()
     private val matrixCanvas = MatrixCanvas()
+    private val close = Close()
 
     init {
         initView(context)
@@ -38,19 +39,7 @@ class SvgCanvasView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-//        val color = Color.argb(255, 0, 0, 255)
-//        arrowDown.setColorTint(color)
-//        line.setColorTint(color)
-//        rect.setColorTint(color)
-//        circle.setColorTint(color)
-//        ellipse.setColorTint(color)
-//        pathCanvas.setColorTint(color)
-//        polyline.setColorTint(color)
-//        polyline2.setColorTint(color)
-//        polygon.setColorTint(color)
-//        textCanvas.setColorTint(color)
-//        matrixCanvas.setColorTint(color)
-
+        close.paint(canvas, 24, 24, 620, 30)
         arrowDown.paint(canvas, 100, 80, 300, 10)
         line.paint(canvas, 100, 100, 10, 10);
         rect.paint(canvas, 300, 100, 10, 120)

@@ -12,7 +12,7 @@ import android.graphics.PorterDuffColorFilter;
 import java.util.LinkedList;
 
 /**
- * This class is generated automatically by using SvgAndroidTranscoder.
+ * This class is generated automatically by using AndroidSvgTranscoder.
  *
  * @author furutuki furutuki@foxmail.com
  */
@@ -265,7 +265,7 @@ public class PathCanvas {
     /**
      * Clear the color tint for the svg, it will be drawn with the original color in the svg file.
      **/
-    public void clearColorTint(int color){
+    public void clearColorTint(){
         colorFilter = null;
     }
 
