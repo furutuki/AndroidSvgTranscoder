@@ -48,4 +48,4 @@ arrowDown.paint(canvas, 100, 80, 300, 10)
 
 在范例工程transcoder-sample演示了如何使用本插件，预先在svg目录放置了一些svg文件，执行svgBatchConverter任务生成对应的java文件后，在canvas中调用这些java类绘制svg图形，下图是范例工程运行的截图。
 
-<img src="transcoder-sample/Screenshot.png" style="zoom:50%;" />
+<img src="https://github.com/furutuki/AndroidSvgTranscoder/blob/main/transcoder-sample/Screenshot.png" style="zoom:30%;" />

@@ -57,5 +57,5 @@ arrowDown.paint(canvas, 100, 80, 300, 10)
 
 The transcoder-sample module has some svg files in directory *svg*，execute the task **svgBatchConverter** and use the output java files to draw them, below is the screenshot of the sample project.
 
-<img src="/Users/huzhong/git/AndroidSvgTranscoder/transcoder-sample/Screenshot.png" style="zoom:50%;" />
+<img src="https://github.com/furutuki/AndroidSvgTranscoder/blob/main/transcoder-sample/Screenshot.png" style="zoom:30%;" />
 
