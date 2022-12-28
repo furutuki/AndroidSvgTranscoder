@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.furutuki",
+    "module": "transcoder-plugin",
+    "version": "0.1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.3.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "transcoder-plugin-0.1.0.jar",
+          "url": "transcoder-plugin-0.1.0.jar",
+          "size": 9194,
+          "sha512": "8cb7725aabe5dacf14066e1995725d336cb5d1ba98ffa5de29cf0fcffce292bfeacad0b11a754ff6fcefdacdd8e09bd562b63855de48ba19ebc7c43c7ef81d16",
+          "sha256": "b3b402b8c4a337b7016f95c51e37b8c89d475f75e6cb6f02a69c0a1897ed7c1c",
+          "sha1": "f00aab1474f7ac56473db4ea9e2162d3ba5b6219",
+          "md5": "d9cdcd169f7fca0899995f8ad1a79c6e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.furutuki",
+          "module": "transcoder-core",
+          "version": {
+            "requires": "0.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "transcoder-plugin-0.1.0.jar",
+          "url": "transcoder-plugin-0.1.0.jar",
+          "size": 9194,
+          "sha512": "8cb7725aabe5dacf14066e1995725d336cb5d1ba98ffa5de29cf0fcffce292bfeacad0b11a754ff6fcefdacdd8e09bd562b63855de48ba19ebc7c43c7ef81d16",
+          "sha256": "b3b402b8c4a337b7016f95c51e37b8c89d475f75e6cb6f02a69c0a1897ed7c1c",
+          "sha1": "f00aab1474f7ac56473db4ea9e2162d3ba5b6219",
+          "md5": "d9cdcd169f7fca0899995f8ad1a79c6e"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "transcoder-plugin-0.1.0-javadoc.jar",
+          "url": "transcoder-plugin-0.1.0-javadoc.jar",
+          "size": 261,
+          "sha512": "154c03dab2c76ed40a06780db23863a8a7a6508102ece1ff272c84be4183de182ce956565b393d93abb21f3289212a2360644211e772503668c5004dead42d24",
+          "sha256": "cb2d97edcec8fd760050ee9e4b4340348fdac77fd9fea17d00ad9acbff774126",
+          "sha1": "e63f4e07befcc892d03dcd21c06be308be7d5335",
+          "md5": "bacc0583baf08330440374b2a922c6b8"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "transcoder-plugin-0.1.0-sources.jar",
+          "url": "transcoder-plugin-0.1.0-sources.jar",
+          "size": 2229,
+          "sha512": "091b97d5885ef27b8924ae9e3f9a2080135564889adb16dec4003d6220d82e3016e4ee59e7881ad578f1604daba51180af5fefb4d58b693c2afb442211ec02cf",
+          "sha256": "25926556e272497edff365a71d295dcb63b3cf4597748373c75b77ec9488567a",
+          "sha1": "8f6cdb85076d20109ec9d7922e3fd386836424fc",
+          "md5": "1576012a7786f9ee03bb13daab705b1c"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.furutuki",
+    "module": "transcoder-core",
+    "version": "0.1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.3.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.apache.xmlgraphics",
+          "module": "batik-bridge",
+          "version": {
+            "requires": "1.16"
+          }
+        },
+        {
+          "group": "org.apache.xmlgraphics",
+          "module": "batik-gvt",
+          "version": {
+            "requires": "1.16"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "transcoder-core-0.1.0.jar",
+          "url": "transcoder-core-0.1.0.jar",
+          "size": 56049,
+          "sha512": "996e709f19ea0451d57c9c4174bf220a8f0da8c7dc6851317eb051a5bc188936b0d80f13f02c0bbf483c18df43353c10d3ffcd2ebdb225eb6347328378feba68",
+          "sha256": "5b278ee7e8a93c4a1af41d52ad1a8c15f00fd9ee9d4613246b2d9bacd4621aae",
+          "sha1": "0d1d0465b8f19b723226dbdbc6ddd67ea71f643d",
+          "md5": "86d60e5283c1e3455462b624b46c77c5"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.apache.xmlgraphics",
+          "module": "batik-bridge",
+          "version": {
+            "requires": "1.16"
+          }
+        },
+        {
+          "group": "org.apache.xmlgraphics",
+          "module": "batik-gvt",
+          "version": {
+            "requires": "1.16"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "transcoder-core-0.1.0.jar",
+          "url": "transcoder-core-0.1.0.jar",
+          "size": 56049,
+          "sha512": "996e709f19ea0451d57c9c4174bf220a8f0da8c7dc6851317eb051a5bc188936b0d80f13f02c0bbf483c18df43353c10d3ffcd2ebdb225eb6347328378feba68",
+          "sha256": "5b278ee7e8a93c4a1af41d52ad1a8c15f00fd9ee9d4613246b2d9bacd4621aae",
+          "sha1": "0d1d0465b8f19b723226dbdbc6ddd67ea71f643d",
+          "md5": "86d60e5283c1e3455462b624b46c77c5"
+        }
+      ]
+    }
+  ]
+}
