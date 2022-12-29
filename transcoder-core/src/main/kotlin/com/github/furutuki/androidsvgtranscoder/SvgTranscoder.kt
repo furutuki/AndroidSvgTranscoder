@@ -217,9 +217,18 @@ class SvgTranscoder constructor(var javaClassName: String?) {
         if (paint is Color) {
             val color: Color = paint
             printWriter.println(
-                (if (fill) "paint" else "strokePaint") + ".setColor(Color.argb(" + color.alpha + ", "
+                (if (fill) "paint" else "strokePaint") + ".setColor(Color.argb("
+                        + getPaintAlphaString(color.alpha) + ", "
                         + color.red + ", " + color.green + ", " + color.blue + "));"
             )
+        }
+    }
+
+    private fun getPaintAlphaString(alpha: Int): String {
+        return if (currentComposite != null && currentComposite!!.alpha != 1f) {
+            "(int)(${currentComposite!!.alpha} * $alpha)"
+        } else {
+            "$alpha"
         }
     }
 
@@ -252,9 +261,6 @@ class SvgTranscoder constructor(var javaClassName: String?) {
     private fun transcodeCompositeChange(composite: AlphaComposite?) {
         if ((composite != null) && composite != currentComposite && !(currentComposite == null && composite.alpha == 1f)) {
             currentComposite = composite
-            printWriter.println("g.setComposite(AlphaComposite.getInstance(" + composite.rule
-                    + ", " + FloatTranscoder.transcode(composite.alpha) + " * origAlpha));"
-            )
         }
     }
 
