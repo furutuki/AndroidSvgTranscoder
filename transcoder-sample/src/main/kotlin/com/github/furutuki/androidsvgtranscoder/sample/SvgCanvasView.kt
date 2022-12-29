@@ -27,6 +27,8 @@ class SvgCanvasView @JvmOverloads constructor(
     private val textCanvas = Text()
     private val matrixCanvas = MatrixCanvas()
     private val close = Close()
+    private val goldenCross = GoldenCross()
+    private val deathCross = DeathCross()
 
     init {
         initView(context)
@@ -51,5 +53,7 @@ class SvgCanvasView @JvmOverloads constructor(
         polygon.paint(canvas, 92, 201, 10, 1320)
         textCanvas.paint(canvas, 200, 60, 10, 1600)
         matrixCanvas.paint(canvas, 330, 360, 600, 1600)
+        goldenCross.paint(canvas, 196, 196, 650, 30)
+        deathCross.paint(canvas, 196, 196, 800, 30)
     }
 }
