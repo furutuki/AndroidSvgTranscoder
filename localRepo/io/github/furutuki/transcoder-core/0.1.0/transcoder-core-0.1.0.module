@@ -52,11 +52,11 @@
         {
           "name": "transcoder-core-0.1.0.jar",
           "url": "transcoder-core-0.1.0.jar",
-          "size": 56049,
-          "sha512": "996e709f19ea0451d57c9c4174bf220a8f0da8c7dc6851317eb051a5bc188936b0d80f13f02c0bbf483c18df43353c10d3ffcd2ebdb225eb6347328378feba68",
-          "sha256": "5b278ee7e8a93c4a1af41d52ad1a8c15f00fd9ee9d4613246b2d9bacd4621aae",
-          "sha1": "0d1d0465b8f19b723226dbdbc6ddd67ea71f643d",
-          "md5": "86d60e5283c1e3455462b624b46c77c5"
+          "size": 56105,
+          "sha512": "6be288bd0751caf78308057e28c4051979bf8d18a745b55420c670f759a6964ab067608a15405380d9cd251f7563e6a8e4596d09d901c0e1836b47f0612976f8",
+          "sha256": "954826fb3efa3a4ca8344c5143994684294b3616a9658ad51077e2494e05b2c9",
+          "sha1": "eedbc9f4aacb6e50f09f8a6786b74aef92c7e0bf",
+          "md5": "7afb54d5fbbd6e649bdba056fd6a976a"
         }
       ]
     },
@@ -98,11 +98,11 @@
         {
           "name": "transcoder-core-0.1.0.jar",
           "url": "transcoder-core-0.1.0.jar",
-          "size": 56049,
-          "sha512": "996e709f19ea0451d57c9c4174bf220a8f0da8c7dc6851317eb051a5bc188936b0d80f13f02c0bbf483c18df43353c10d3ffcd2ebdb225eb6347328378feba68",
-          "sha256": "5b278ee7e8a93c4a1af41d52ad1a8c15f00fd9ee9d4613246b2d9bacd4621aae",
-          "sha1": "0d1d0465b8f19b723226dbdbc6ddd67ea71f643d",
-          "md5": "86d60e5283c1e3455462b624b46c77c5"
+          "size": 56105,
+          "sha512": "6be288bd0751caf78308057e28c4051979bf8d18a745b55420c670f759a6964ab067608a15405380d9cd251f7563e6a8e4596d09d901c0e1836b47f0612976f8",
+          "sha256": "954826fb3efa3a4ca8344c5143994684294b3616a9658ad51077e2494e05b2c9",
+          "sha1": "eedbc9f4aacb6e50f09f8a6786b74aef92c7e0bf",
+          "md5": "7afb54d5fbbd6e649bdba056fd6a976a"
         }
       ]
     }
