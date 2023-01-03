@@ -27,12 +27,12 @@ publishing {
         maven(MavenPublication) {
             groupId = 'io.github.furutuki'
             artifactId = 'transcoder-core'
-            version = '0.1.0'
+            version = '0.1.1'
 
             from components.java
 
             pom {
-                name = 'AndroidSvgTranscoder transcoder-core library'
+                name = 'AndroidSvgTranscoder core library'
                 description = 'Android SVG Transcoder core library, that makes you enable to transcode SVG file to Android source file(Java).'
                 url = 'https://github.com/furutuki/AndroidSvgTranscoder'
                 inceptionYear = '2022'
