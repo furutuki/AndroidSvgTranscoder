@@ -18,7 +18,7 @@ AndroidSvgTranscoder是一款可以批量转换SVG文件为Android代码文件�
 
 ```groovy
 plugins {
-    id 'io.github.furutuki.android-svg-transcoder' version '0.1.0'
+    id 'io.github.furutuki.android-svg-transcoder' version '0.1.1'
 }
 ```
 

@@ -20,7 +20,7 @@ AndroidSvgTranscoder makes you able to transcode svg files to java code, with wh
 
 ```groovy
 plugins {
-    id 'io.github.furutuki.android-svg-transcoder' version '0.1.0'
+    id 'io.github.furutuki.android-svg-transcoder' version '0.1.1'
 }
 ```
 
