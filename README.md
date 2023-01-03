@@ -22,11 +22,12 @@ AndroidSvgTranscoder makes you able to transcode svg files to java code, with wh
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        mavenCentral()
+        google()
     }
 }
 dependencyResolutionManagement {
     repositories {
+      	google()
         mavenCentral()
     }
 }
