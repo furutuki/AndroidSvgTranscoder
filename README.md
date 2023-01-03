@@ -16,7 +16,23 @@ AndroidSvgTranscoder makes you able to transcode svg files to java code, with wh
 
 ## Usage：
 
-1. Apply AndroidSvgTranscoder plugin：
+1. Make sure repository below exists in your setting.gradle。If your AGP's version is too low that doesn't support 'pluginManagement' grammar，you can add the repository in build.gradle of root project。
+
+```groovy
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+```
+
+2. Apply AndroidSvgTranscoder plugin：
 
 ```groovy
 plugins {
@@ -24,13 +40,13 @@ plugins {
 }
 ```
 
-2. Add **svgTranscoder** extension in your *build.gradle* and config the three properties below：
+3. Add **svgTranscoder** extension in your *build.gradle* and config the three properties below：
 
-   **svgFolder**: directory that contains your svg files
+​	**svgFolder**: directory that contains your svg files
 
-   **javaFolder**: directory that contains java files generated
+​	**javaFolder**: directory that contains java files generated
 
-   **packageName** : package name of the java files generated
+​	**packageName** : package name of the java files generated
 
 ```groovy
 svgTranscoder {
@@ -40,7 +56,7 @@ svgTranscoder {
 }
 ```
 
-3. execute the task **svgBatchConverter**：
+4. execute the task **svgBatchConverter**：
 
 ```shell
  ./gradlew svgBatchConverter

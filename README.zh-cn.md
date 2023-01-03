@@ -14,7 +14,23 @@ AndroidSvgTranscoder是一款可以批量转换SVG文件为Android代码文件�
 
 ## 使用方法：
 
-1. 在您项目的build.gradle文件中引用插件：
+1. 添加仓库。如果您的AGP版本较低不支持pluginManagement的写法，可以把仓库添加到根目录的build.gradle。
+
+```groovy
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+```
+
+2. 在您项目的build.gradle文件中引用插件：
 
 ```groovy
 plugins {
@@ -22,7 +38,7 @@ plugins {
 }
 ```
 
-2. 添加svgTranscoder扩展节点，配置3个属性：svg文件所在的目录，生成的java文件目录，java文件的包名
+3. 添加svgTranscoder扩展节点，配置3个属性：svg文件所在的目录，生成的java文件目录，java文件的包名
 
 ```groovy
 svgTranscoder {
@@ -32,7 +48,7 @@ svgTranscoder {
 }
 ```
 
-3. 命令行执行任务或者在AndroidStudio右侧的gradle任务列表中点击sag-transcoder分组的svgBatchConverter任务，这里以命令行为例：
+4. 命令行执行任务或者在AndroidStudio右侧的gradle任务列表中点击sag-transcoder分组的svgBatchConverter任务，这里以命令行为例：
 
 ```shell
  ./gradlew svgBatchConverter
