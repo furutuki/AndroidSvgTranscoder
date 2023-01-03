@@ -8,9 +8,15 @@ AndroidSvgTranscoder makes you able to transcode svg files to java code, with wh
 
 ## Project Structure
 
-- transcoder-core：core module that can transcode a svg to java file。Generally, you may not use this module directly, instead using transcoder-plugin is more convenient unless you want to do some customization job.
-- transcoder-plugin：gradle plugin module, you can apply this plugin which offer a task 'svgBatchConverter' that can transcode a set of svg files at the same time.
-- transcoder-sample：A sample module that show you how to use this transcoder-plugin。
+- **transcoder-core**：core module that can transcode a svg file to java file。Generally, you don‘t need to use this module directly, instead using transcoder-plugin is more convenient unless you want to do some customization job.
+
+  
+
+- **transcoder-plugin**：gradle plugin module, you can apply this plugin which offer a task 'svgBatchConverter' that can transcode a set of svg files at the same time.
+
+  
+
+- **transcoder-sample**：A sample module that show you how to use this transcoder-plugin。
 
 
 

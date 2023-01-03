@@ -1,14 +1,13 @@
 # AndroidSvgTranscoder
 
-AndroidSvgTranscoder是一款可以批量转换SVG文件为Android代码文件（Java）的gradle插件。如果您的Android项目需要在canvas中直接渲染绘制svg，那么本插件正是您所需要的。
-
+AndroidSvgTranscoder是一款可以批量转换SVG文件为Android代码文件（Java）的类库。如果您的Android项目需要在canvas中直接渲染绘制svg，那么本类库正是您所需要的。
 
 
 ## 项目结构
 
-- transcoder-core：svg转换为java文件的核心逻辑module。
-- transcoder-plugin：gradle插件module，基于transcoder-core提供的转换功能，暴露一个任务svgBatchConverter和扩展svgTranscoder，您的工程引用这个插件后，就可以实现svg转换为java文件的目的。
-- transcoder-sample：如何使用transcoder-plugin的范例工程。
+- **transcoder-core**：svg转换为java文件的核心逻辑module。一般不需要直接引用这个类库，可以使用封装好的gradle插件（transcoder-plugin module）来转换svg。如果您的需求是gradle插件不能满足的，您可以直接引用本类库去做二次开发，因此本库也单独发布到了marvenCentral方便您的使用。
+- **transcoder-plugin**：gradle插件module，基于transcoder-core提供的转换功能，暴露一个任务svgBatchConverter和扩展svgTranscoder，您的工程引用这个插件后，就可以实现svg转换为java文件的目的。
+- **transcoder-sample**：如何使用transcoder-plugin的范例工程。
 
 
 
