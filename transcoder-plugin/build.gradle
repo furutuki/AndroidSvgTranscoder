@@ -1,27 +1,27 @@
 plugins {
-    id 'groovy'
+    id 'org.jetbrains.kotlin.jvm'
     id 'com.gradle.plugin-publish' version '1.1.0'
 }
 
 dependencies {
-    implementation 'io.github.furutuki:transcoder-core:0.1.0'
+    implementation 'io.github.furutuki:transcoder-core:0.1.1'
 }
-//
-//pluginBundle {
-//    website = 'https://github.com/furutuki/AndroidSvgTranscoder'
-//    vcsUrl = 'https://github.com/furutuki/AndroidSvgTranscoder.git'
-//    tags = ['svg', 'transcode', 'android', 'java']
-//}
+
+pluginBundle {
+    website = 'https://github.com/furutuki/AndroidSvgTranscoder'
+    vcsUrl = 'https://github.com/furutuki/AndroidSvgTranscoder.git'
+    tags = ['svg', 'transcode', 'android', 'java']
+}
 
 group = 'io.github.furutuki'
-version = '0.1.0'
+version = '0.1.1'
 
 gradlePlugin {
     plugins {
         svgTranscoderPlugin {
             id = 'io.github.furutuki.android-svg-transcoder'
-            displayName = 'Gradle plugin for transcoding svg to android source file'
-            description = 'A plugin that helps you transcode svg files to android source file,' +
+            displayName = 'AndroidSvgTranscoder plugin'
+            description = 'A gradle plugin that helps you transcode svg files to android source file(Java),' +
                     ' with which you can compile and use the generated classes to render svg image ' +
                     'in canvas'
             implementationClass = 'com.github.furutuki.androidsvgtranscoder.plugin.SvgTranscoderPlugin'
