@@ -1,5 +1,8 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm'
+    id 'maven-publish'
+    id 'signing'
+    id 'org.jetbrains.dokka' version '1.4.32'
     id 'com.gradle.plugin-publish' version '1.1.0'
 }
 
@@ -28,13 +31,76 @@ gradlePlugin {
         }
     }
 }
-//
-//// publish to local directory
+
+task generateSourcesJar(type: Jar) {
+    group ='jar'
+    archiveClassifier.set('sources')
+    from sourceSets.main.allSource
+}
+
+task generateDocJar(type: Jar, dependsOn: dokkaHtml) {
+    group = 'jar'
+    archiveClassifier.set('javadoc')
+    from "$buildDir/dokka/html"
+}
+
 publishing {
-    repositories {
-        maven {
-            name = 'localRepo'
-            url = '../localRepo'
+    publications {
+        maven(MavenPublication) {
+            groupId = 'io.github.furutuki'
+            artifactId = 'transcoder-plugin'
+            version = '0.1.1'
+
+            from components.java
+
+            pom {
+                name = 'AndroidSvgTranscoder plugin library'
+                description = 'Android SVG Transcoder plugin library, that makes you able to transcode SVG file to Android source file(Java).'
+                url = 'https://github.com/furutuki/AndroidSvgTranscoder'
+                inceptionYear = '2022'
+
+                scm {
+                    url = 'https://github.com/furutuki/AndroidSvgTranscoder'
+                    connection = 'scm:git@https://github.com/furutuki/AndroidSvgTranscoder.git'
+                    developerConnection = 'scm:git@https://github.com/furutuki/AndroidSvgTranscoder.git'
+                }
+
+                licenses {
+                    license {
+                        name = 'The Apache Software License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        comments = 'A business-friendly OSS license'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'furutuki'
+                        name = 'HU Zhong'
+                        email = 'furutuki@foxmail.com'
+                        url = 'https://github.com/furutuki'
+                    }
+                }
+
+                issueManagement {
+                    system = 'GitHub'
+                    url = 'https://github.com/furutuki/AndroidSvgTranscoder/issues'
+                }
+            }
         }
     }
+    repositories {
+        maven {
+            name = 'MavenCentralRepo'
+            url = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+            credentials(PasswordCredentials)
+        }
+        maven {
+            name = 'localRepo'
+            url = "../localRepo"
+        }
+    }
+}
+signing {
+    sign publishing.publications.maven
 }
