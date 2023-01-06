@@ -2,35 +2,17 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
     id 'maven-publish'
     id 'signing'
+    id 'java-gradle-plugin'
     id 'org.jetbrains.dokka' version '1.4.32'
-    id 'com.gradle.plugin-publish' version '1.1.0'
+//    id 'com.gradle.plugin-publish' version '1.0.0'
 }
 
 dependencies {
     implementation 'io.github.furutuki:transcoder-core:0.1.1'
 }
 
-pluginBundle {
-    website = 'https://github.com/furutuki/AndroidSvgTranscoder'
-    vcsUrl = 'https://github.com/furutuki/AndroidSvgTranscoder.git'
-    tags = ['svg', 'transcode', 'android', 'java']
-}
-
 group = 'io.github.furutuki'
 version = '0.1.1'
-
-gradlePlugin {
-    plugins {
-        svgTranscoderPlugin {
-            id = 'io.github.furutuki.android-svg-transcoder'
-            displayName = 'AndroidSvgTranscoder plugin'
-            description = 'A gradle plugin that helps you transcode svg files to android source file(Java),' +
-                    ' with which you can compile and use the generated classes to render svg image ' +
-                    'in canvas'
-            implementationClass = 'com.github.furutuki.androidsvgtranscoder.plugin.SvgTranscoderPlugin'
-        }
-    }
-}
 
 task generateSourcesJar(type: Jar) {
     group ='jar'
@@ -46,13 +28,8 @@ task generateDocJar(type: Jar, dependsOn: dokkaHtml) {
 
 publishing {
     publications {
-        maven(MavenPublication) {
-            groupId = 'io.github.furutuki'
-            artifactId = 'transcoder-plugin'
-            version = '0.1.1'
-
-            from components.java
-
+        withType(MavenPublication) {
+            // customize all publications here: plugin itself and plugin marker
             pom {
                 name = 'AndroidSvgTranscoder plugin library'
                 description = 'Android SVG Transcoder plugin library, that makes you able to transcode SVG file to Android source file(Java).'
@@ -88,6 +65,29 @@ publishing {
                 }
             }
         }
+
+        pluginMaven(MavenPublication) {
+            groupId = 'io.github.furutuki'
+            artifactId = 'transcoder-plugin'
+            version = '0.1.1'
+
+//            from components.java
+
+            pom {
+                name = 'AndroidSvgTranscoder plugin library'
+                description = 'Android SVG Transcoder plugin library, that makes you able to transcode SVG file to Android source file(Java).'
+                url = 'https://github.com/furutuki/AndroidSvgTranscoder'
+                inceptionYear = '2022'
+
+                artifact(generateSourcesJar) {
+                    classifier = 'sources'
+                }
+
+                artifact(generateDocJar) {
+                    classifier = 'javadoc'
+                }
+            }
+        }
     }
     repositories {
         maven {
@@ -102,5 +102,25 @@ publishing {
     }
 }
 signing {
-    sign publishing.publications.maven
+    sign publishing.publications
 }
+
+gradlePlugin {
+    plugins {
+        svgTranscoderPlugin {
+            id = 'io.github.furutuki.android-svg-transcoder'
+            displayName = 'AndroidSvgTranscoder plugin'
+            description = 'A gradle plugin that helps you transcode svg files to android source file(Java),' +
+                    ' with which you can compile and use the generated classes to render svg image ' +
+                    'in canvas'
+            implementationClass = 'com.github.furutuki.androidsvgtranscoder.plugin.SvgTranscoderPlugin'
+        }
+    }
+}
+
+//pluginBundle {
+//    website = 'https://github.com/furutuki/AndroidSvgTranscoder'
+//    vcsUrl = 'https://github.com/furutuki/AndroidSvgTranscoder.git'
+//    tags = ['svg', 'transcode', 'android', 'java']
+//}
+
