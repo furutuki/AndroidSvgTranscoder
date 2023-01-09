@@ -5,20 +5,20 @@ AndroidSvgTranscoder是一款可以批量转换SVG文件为Android代码文件�
 
 ## 项目结构
 
-- **transcoder-core**：svg转换为java文件的核心逻辑module。一般不需要直接引用这个类库，可以使用封装好的gradle插件（transcoder-plugin module）来转换svg。如果您的需求是gradle插件不能满足的，您可以直接引用本类库去做二次开发，因此本库也单独发布到了marvenCentral方便您的使用。
-- **transcoder-plugin**：gradle插件module，基于transcoder-core提供的转换功能，暴露一个任务svgBatchConverter和扩展svgTranscoder，您的工程引用这个插件后，就可以实现svg转换为java文件的目的。
+- **transcoder-core**：svg转换为java文件的核心逻辑module。一般不需要直接引用这个类库，可以使用封装好的gradle插件（transcoder-plugin module）来转换svg。如果您的需求是gradle插件不能满足的，您可以直接引用本类库去做二次开发，因此本库也单独发布到了[marvenCentral](https://mvnrepository.com/artifact/io.github.furutuki/transcoder-core)方便您的使用。
+- **transcoder-plugin**：gradle插件module，基于transcoder-core提供的转换功能，暴露一个任务svgBatchConverter和扩展svgTranscoder，您的工程引用这个插件后，就可以实现svg转换为java文件的目的。本插件发布到了[mavenCentral](https://mvnrepository.com/artifact/io.github.furutuki/transcoder-plugin)和[Gradle Glugin Portal](https://plugins.gradle.org/plugin/io.github.furutuki.android-svg-transcoder)两个仓库。
 - **transcoder-sample**：如何使用transcoder-plugin的范例工程。
 
 
 
-## 使用方法：
+## Gradle插件使用方法：
 
 1. 添加仓库。如果您的AGP版本较低不支持pluginManagement的写法，可以把仓库添加到根目录的build.gradle。
 
 ```groovy
 pluginManagement {
     repositories {
-        gradlePluginPortal()
+        mavenCentral() // 或者 gradlePluginPortal()
         google()
     }
 }
