@@ -61,14 +61,14 @@ ${PAINTING_CODE}
      *
      * @param color the color that used to tint the svg
      **/
-    public void setColorTint(int color){
+    public void setColorTint(int color) {
         colorFilter = new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN);
     }
 
     /**
      * Clear the color tint for the svg, it will be drawn with the original color in the svg file.
      **/
-    public void clearColorTint(){
+    public void clearColorTint() {
         colorFilter = null;
     }
 
