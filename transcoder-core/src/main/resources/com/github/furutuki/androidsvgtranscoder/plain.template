@@ -35,8 +35,8 @@ public class ${CLASSNAME} {
      * @param dy the y-offset of svg's left top in the canvas
      */
     public void paint(Canvas canvas, int w, int h, int dx, int dy) {
-        float svgWidth = ${WIDTH}f;
-        float svgHeight= ${HEIGHT}f;
+        float svgWidth  = ${WIDTH}f;
+        float svgHeight = ${HEIGHT}f;
 
         resetPaint();
 
