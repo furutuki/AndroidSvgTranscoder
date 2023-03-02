@@ -50,7 +50,7 @@ public class ${CLASSNAME} {
 
         Matrix transform = null;
 
-        LinkedList<Matrix> matrixList = new LinkedList<Matrix>();
+        final LinkedList<Matrix> matrixList = new LinkedList<Matrix>();
 
 ${PAINTING_CODE}
         canvas.restore();
