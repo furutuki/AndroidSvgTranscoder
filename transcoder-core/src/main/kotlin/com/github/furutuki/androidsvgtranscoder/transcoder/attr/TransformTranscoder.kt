@@ -18,7 +18,7 @@ object TransformTranscoder: Transcoder<AffineTransform>() {
         if (!instance.isIdentity) {
             val matrix = DoubleArray(6)
             instance.getMatrix(matrix)
-            output.append("\t\ttransform.setValues(new float[]{")
+            output.append("        transform.setValues(new float[]{")
                 .append(FloatTranscoder.transcode(matrix[0].toFloat())).append(", ")
                 .append(FloatTranscoder.transcode(matrix[2].toFloat())).append(", ")
                 .append(FloatTranscoder.transcode(matrix[4].toFloat())).append(", ")
